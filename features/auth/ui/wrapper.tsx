@@ -10,6 +10,7 @@ import {
   Button,
 } from "@/shared/ui";
 
+import { Suspense } from "react";
 import { Social } from "./social";
 import Link from "next/link";
 
@@ -36,7 +37,11 @@ export function Wrapper({
         {description && <CardDescription>{description}</CardDescription>}
       </CardHeader>
       <CardContent>
-        {isShowSocial && <Social />}
+        {isShowSocial && (
+          <Suspense fallback={<h1>Загрузка...</h1>}>
+            <Social />
+          </Suspense>
+        )}
         {children}
       </CardContent>
       <CardFooter>
