@@ -2,7 +2,10 @@
 
 import { Wrapper } from "./wrapper";
 import { useForm } from "react-hook-form";
-import { type LoginSchemaType, LoginSchema } from "@/features/auth/schemes";
+import {
+  type ResetPasswordSchemaType,
+  ResetPasswordSchema,
+} from "@/features/auth/schemes";
 import { zodResolver } from "@hookform/resolvers/zod";
 // import { toast } from "sonner";
 
@@ -17,26 +20,24 @@ import {
   Button,
 } from "@/shared/ui";
 
-export function LoginForm() {
-  const form = useForm<LoginSchemaType>({
-    resolver: zodResolver(LoginSchema),
+export function ResetPasswordForm() {
+  const form = useForm<ResetPasswordSchemaType>({
+    resolver: zodResolver(ResetPasswordSchema),
     defaultValues: {
       email: "",
-      password: "",
     },
   });
 
-  const onSubmit = (values: LoginSchemaType) => {
+  const onSubmit = (values: ResetPasswordSchemaType) => {
     console.log(values);
   };
 
   return (
     <Wrapper
-      heading="Войти в аккаунт"
-      description="Для входа на сайт используйте ваш email и пароль, которые были указаны при регистрации на сайте"
-      backButtonLabel="Ещё нет аккаунта? Регистрация"
-      backButtonHref="/auth/register"
-      isShowSocial
+      heading="Сброс пароля"
+      description="Введите вашу почту, чтобы получить ссылку для сброса пароля"
+      backButtonLabel="Уже есть аккаунт? Войти"
+      backButtonHref="/auth/login"
     >
       <Form {...form}>
         <form
@@ -55,20 +56,6 @@ export function LoginForm() {
                     type="email"
                     {...field}
                   />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-
-          <FormField
-            control={form.control}
-            name="password"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Пароль</FormLabel>
-                <FormControl>
-                  <Input placeholder="******" type="password" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
