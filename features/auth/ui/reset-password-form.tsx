@@ -37,7 +37,7 @@ export function ResetPasswordForm() {
       heading="Сброс пароля"
       description="Введите вашу почту, чтобы получить ссылку для сброса пароля"
       backButtonLabel="Уже есть аккаунт? Войти"
-      backButtonHref="/auth/login"
+      backButtonHref="/login"
     >
       <Form {...form}>
         <form

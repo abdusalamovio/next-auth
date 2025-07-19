@@ -1,3 +1,5 @@
+"use client";
+
 import type { PropsWithChildren } from "react";
 import { SessionProvider } from "./session-provider";
 import { ThemeProvider } from "./theme-provider";

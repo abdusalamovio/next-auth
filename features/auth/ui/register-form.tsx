@@ -40,7 +40,7 @@ export function RegisterForm() {
       heading="Создать аккаунт"
       description="Для регистрации достаточно ввести своё имя, email и придумать пароль"
       backButtonLabel="Уже есть аккаунт? Войти"
-      backButtonHref="/auth/login"
+      backButtonHref="/login"
     >
       <Form {...form}>
         <form
