@@ -1,3 +1,14 @@
 .git
-/.next/
-/node_modules
+.next
+node_modules
+
+npm-debug.log
+
+.env*
+!.env.example
+
+.dockerignore
+docker-compose.yml
+Dockerfile
+
+README.md
